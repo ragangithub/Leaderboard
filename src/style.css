@@ -84,3 +84,13 @@ li:last-child {
   float: right;
   padding: 10px;
 }
+
+#refresh,
+#submit {
+  cursor: pointer;
+}
+
+.board {
+  height: 180px;
+  overflow-y: auto;
+}

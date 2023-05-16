@@ -57,13 +57,18 @@
   </ul>
 </details>
 
+> Leaderboard API Service: this is an API used to save scores of a game that is submitted via the form.
+
+The base link is: https://us-central1-js-capstone-backend.cloudfunctions.net/api/
+
+The game link is: https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/EOg8DEB08E5WHiCDSedw/scores
+
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- Added html file.
-- Added css file.
-- Added Js file.
+- Add score.
+- Refresh scores.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
