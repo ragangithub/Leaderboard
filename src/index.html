@@ -12,16 +12,16 @@
       <div class="lists">
         <div class="recent">
           <h2>Recent scores</h2>
-          <button>Refresh</button>
+          <button id="refresh">Refresh</button>
         </div>
         <ul class="board"></ul>
       </div>
 
       <div class="scores">
         <p>Add your score</p>
-        <form>
-          <input type="text" id="name" placeholder="Your name" />
-          <input type="text" id="score" placeholder="Your score" />
+        <form class="score-form">
+          <input type="text" id="name" required placeholder="Your name" />
+          <input type="text" id="score" required placeholder="Your score" />
           <button>Submit</button>
         </form>
       </div>
