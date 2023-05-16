@@ -1,53 +1,32 @@
 import './style.css';
-import { setTasksToStorage } from './modules/storage.js';
 
-const scores = [
-  {
-    id: 1,
-    name: 'Name',
-    score: 100,
-  },
-  {
-    id: 2,
-    name: 'Name',
-    score: 20,
-  },
-  {
-    id: 3,
-    name: 'Name',
-    score: 50,
-  },
-  {
-    id: 4,
-    name: 'Name',
-    score: 78,
-  },
-  {
-    id: 5,
-    name: 'Name',
-    score: 125,
-  },
-  {
-    id: 7,
-    name: 'Name',
-    score: 77,
-  },
-  {
-    id: 6,
-    name: 'Name',
-    score: 42,
-  },
-];
+import Board from './modules/board.js';
 
-const displayScores = () => {
-  scores.forEach((score) => {
-    const li = document.createElement('li');
+const board = new Board();
 
-    li.id = score.id;
-    li.textContent = `${score.name}:${score.score}`;
-    document.querySelector('.board').appendChild(li);
-    setTasksToStorage(scores);
-  });
+const scoreForm = document.querySelector('.score-form');
+const name = document.querySelector('#name');
+const score = document.querySelector('#score');
+const refresh = document.querySelector('#refresh');
+
+scoreForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const playerName = name.value;
+  const playerScore = score.value;
+  board.addScore(playerScore, playerName);
+  name.value = '';
+  score.value = '';
+});
+
+const loadScores = async () => {
+  await board.getScores();
+  board.displayScores();
 };
 
-displayScores();
+refresh.addEventListener('click', () => {
+  loadScores();
+});
+
+window.onload = async () => {
+  loadScores();
+};
